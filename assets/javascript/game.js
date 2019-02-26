@@ -29,12 +29,10 @@ $(".cards-images").on("click", function() {
     var cardValue = ($(this).attr("data-cardvalue"));
     cardValue = parseInt(cardValue);
     num += cardValue;
-    $("#num").html(num);
+    $("#num").html("Your Score: " + num);
     if (num === comtarget) {
-        alert("You have won!!");
+        $("#win").html("You have won!!");
     } else if (num >= comtarget) {
-        alert("You have lost ");
+        $("#loss").html("You have lost! ");
     }
 });
-
-/* , "assets/images/acespade.jpg", "assets/images/hearts.jpg", "assets/images/diamond.jpg" */

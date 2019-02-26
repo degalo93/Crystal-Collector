@@ -1,11 +1,11 @@
 body {
-    background-image: url("../images/set-the-stage.jpg");
+    background-image: url("../images/playingthegame.jpg");
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100%;
-    margin: 0;
+    width: 100%;
+    margin: 10px;
     padding: 20px;
 }
 
@@ -31,12 +31,44 @@ h1 {
     text-align: center;
 }
 
-.cards-images {
-    padding: 20px;
-    width: 230px;
-    height: 300px;
+@keyframes float {
+    0% {
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translatey(0px);
+    }
+    50% {
+        box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+        transform: translatey(-20px);
+    }
+    100% {
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translatey(0px);
+    }
 }
 
+.cards-images {
+    width: 230px;
+    height: 300px;
+    box-sizing: border-box;
+    border-radius: 10%;
+    overflow: hidden;
+    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+    animation: float 6s ease-in-out infinite;
+    margin: 20px;
+}
 
-/*
-#wins {}*/
+#num {
+    color: white;
+    font-size: 30px;
+}
+
+#win {
+    color: white;
+    font-size: 30px;
+}
+
+#loss {
+    color: white;
+    font-size: 30px;
+}

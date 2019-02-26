@@ -1,9 +1,42 @@
 body {
-    background-color: black
+    background-image: url("../images/set-the-stage.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    margin: 0;
+    padding: 20px;
 }
 
-img {
-    background-size: cover
+h1 {
+    float: center;
+    display: inline;
+    color: whitesmoke;
+    text-align: center;
 }
 
-#wins {}
+
+/*.big-box {
+    background-image: url("../images/set-the-stage.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}*/
+
+#comtarget-text {
+    color: white;
+    text-align: center;
+}
+
+.cards-images {
+    padding: 20px;
+    width: 230px;
+    height: 300px;
+}
+
+
+/*
+#wins {}*/

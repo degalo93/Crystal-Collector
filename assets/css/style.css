@@ -46,6 +46,11 @@ h1 {
     }
 }
 
+#direction {
+    color: white;
+    font-size: 30px;
+}
+
 .cards-images {
     width: 230px;
     height: 300px;
@@ -69,6 +74,16 @@ h1 {
 }
 
 #loss {
+    color: white;
+    font-size: 30px;
+}
+
+#totalWins {
+    color: white;
+    font-size: 30px;
+}
+
+#totalLoss {
     color: white;
     font-size: 30px;
 }

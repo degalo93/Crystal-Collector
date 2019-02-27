@@ -9,7 +9,8 @@ $(document).ready(function() {
     var winsCounter = 0;
     var lossCounter = 0;
 
-    var numberOpt = [8, 2, 3, 7];
+    //to randomize the value in the cards
+    var numberOpt = [Math.floor((Math.random() * 8) + 1), Math.floor((Math.random() * 8) + 1), Math.floor((Math.random() * 8) + 1), Math.floor((Math.random() * 8) + 1)];
 
     for (var i = 0; i < numberOpt.length; i++) {
         var imageCards = $("<img>");

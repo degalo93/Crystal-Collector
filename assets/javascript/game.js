@@ -1,9 +1,12 @@
 $(document).ready(function() {
 
+
     //Randomize a number from 20 to 52
     var comtarget = Math.floor((Math.random() * 20) + 42);
 
     $("#comtarget-text").text(comtarget);
+
+
 
     //score value is num
     var num = 0;
@@ -12,11 +15,12 @@ $(document).ready(function() {
     //loss
     var lossCounter = 0;
 
+
     //to randomize the value in the cards
     var numberOpt = [Math.floor((Math.random() * 8) + 1), Math.floor((Math.random() * 8) + 1), Math.floor((Math.random() * 8) + 1), Math.floor((Math.random() * 8) + 1)];
 
 
-
+    //used to give random value to each object in the string
     for (var i = 0; i < numberOpt.length; i++) {
         var imageCards = $("<img>");
         imageCards.addClass("cards-images");
@@ -30,12 +34,33 @@ $(document).ready(function() {
         } else if (i === 3) {
             imageCards.attr("src", "assets/images/diamond.jpg");
         }
+        //
         imageCards.attr("data-cardvalue", numberOpt[i]);
         $("#cards").append(imageCards);
 
+
     }
 
+    function reset() {
+        var comtarget = Math.floor((Math.random() * 20) + 42);
+        $("#comtarget-text").text(comtarget);
+        numberOpt = [Math.floor((Math.random() * 8) + 1), Math.floor((Math.random() * 8) + 1), Math.floor((Math.random() * 8) + 1), Math.floor((Math.random() * 8) + 1)];
+        if (i === 0) {
+            imageCards.attr("src", "assets/images/clubs.jpg");
+        } else if (i === 1) {
+            imageCards.attr("src", "assets/images/acespade.jpg");
+        } else if (i === 2) {
+            imageCards.attr("src", "assets/images/hearts.jpg");
+        } else if (i === 3) {
+            imageCards.attr("src", "assets/images/diamond.jpg");
+        }
+        //
+        imageCards.attr("data-cardvalue", numberOpt[i]);
+        $("#cards").append(imageCards);
 
+
+
+    }
 
 
     $(".cards-images").on("click", function() {
@@ -49,8 +74,9 @@ $(document).ready(function() {
             winsCounter++;
             $("#totalWins").text("Wins: " + winsCounter);
             num = 0;
-
-
+            return numberOpt;
+            return comtarget;
+            reset();
 
 
         } else if (num >= comtarget) {
@@ -58,7 +84,9 @@ $(document).ready(function() {
             lossCounter++;
             $("#totalLoss").text("Losses: " + lossCounter)
             num = 0;
-
+            return numberOpt;
+            return comtarget;
+            reset();
         }
 
     });

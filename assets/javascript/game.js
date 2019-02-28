@@ -5,12 +5,17 @@ $(document).ready(function() {
 
     $("#comtarget-text").text(comtarget);
 
+    //score value is num
     var num = 0;
+    //wins
     var winsCounter = 0;
+    //loss
     var lossCounter = 0;
 
     //to randomize the value in the cards
     var numberOpt = [Math.floor((Math.random() * 8) + 1), Math.floor((Math.random() * 8) + 1), Math.floor((Math.random() * 8) + 1), Math.floor((Math.random() * 8) + 1)];
+
+
 
     for (var i = 0; i < numberOpt.length; i++) {
         var imageCards = $("<img>");
@@ -32,27 +37,34 @@ $(document).ready(function() {
 
 
 
+
     $(".cards-images").on("click", function() {
 
         var cardValue = ($(this).attr("data-cardvalue"));
         cardValue = parseInt(cardValue);
         num += cardValue;
-
         $("#num").text("Your Score: " + num);
         if (num === comtarget) {
-            $("#win").text("You have won!!");
+            alert("You have won!!");
             winsCounter++;
             $("#totalWins").text("Wins: " + winsCounter);
             num = 0;
 
+
+
+
         } else if (num >= comtarget) {
-            $("#loss").text("You have lost! ");
+            alert("You have lost! ");
             lossCounter++;
             $("#totalLoss").text("Losses: " + lossCounter)
             num = 0;
+
         }
 
-
-
     });
+
+    $("#num").text("Your Score: " + num);
+    $("#totalWins").text("Wins: " + winsCounter);
+    $("#totalLoss").text("Losses: " + lossCounter)
+
 });
